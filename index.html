@@ -1,0 +1,199 @@
+<!Doctype html>
+<html>
+    <head>
+        <title>AutoVizzion</title>
+    </head>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <body>
+        <h1 class="heading" align="center">Welcome | AutoVizzion</h1>
+        <div class="outer">
+            <div class="buttons">
+                    <button type="button" class="but customMy btn btn-outline-success" data-toggle="modal" data-target="#visualmodal">Add Visual Device</button>
+                    <br>
+                    <button type="button" class="but btn btn-outline-success" data-toggle="modal" data-target="#hearingmodal">Add Hearing Device</button>
+            </div>
+        </div>
+
+
+      <!-- Visual Modal -->
+      <div class="modal fade" id="visualmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Add Visual Device</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <form action="insertVision.php" method="POST">
+                <div class="modal-body">
+                
+
+                    
+                    <div class="form-group row">
+                        <label for="colFormLabel" class="col-sm-2 col-form-label">Catalog ID:</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="cID" class="form-control" id="colFormLabel" placeholder="Enter Catalog ID">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="colFormLabel" class="col-sm-2 col-form-label">Catalog Name:</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="cName" class="form-control" id="colFormLabel" placeholder="Enter Catalog Name">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="colFormLabel" class="col-sm-2 col-form-label">Description: </label>
+                        <div class="col-sm-10">
+                            <input type="text" name="cDescription" class="form-control" id="colFormLabel" placeholder="Enter Description">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="colFormLabel" class="col-sm-2 col-form-label">Availability Status: </label>
+                        <div class="col-sm-10">
+                            <input type="text" name="aStatus" class="form-control" id="colFormLabel" placeholder="Enter Availability Status">
+                        </div>
+                    </div>
+
+                    <!-- <div class="form-group row"> -->
+                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Device:</label>
+                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" name="dType">
+                                <option selected>Choose...</option>
+                                <option value="1">Frame</option>
+                                <option value="2">Lens</option>
+                                <option value="3">Frame + Lens</option>
+                            </select>
+                    <!-- </div> -->
+                    <br>
+
+                    <div class="form-group row">
+                            <label for="colFormLabel" class="col-sm-2 col-form-label">Frame Brand:</label>
+                            <div class="col-sm-10">
+                                <input type="text" name="fBrand" class="form-control" id="colFormLabel" placeholder="Enter Frame Brand">
+                            </div>
+                        </div> 
+    
+                        <div class="form-group row">
+                            <label for="colFormLabel" class="col-sm-2 col-form-label">Frame Model:</label>
+                            <div class="col-sm-10">
+                                <input type="text" name="fModel" class="form-control" id="colFormLabel" placeholder="Enter Frame Model">
+                            </div>
+                        </div>
+    
+                        
+    
+                        <div class="form-group row">
+                            <label for="colFormLabel" class="col-sm-2 col-form-label">Lens Serial Number: </label>
+                            <div class="col-sm-10">
+                                <input type="text" name="lSerial" class="form-control" id="colFormLabel" placeholder="Enter Lens Serial Number">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                                <label for="colFormLabel" class="col-sm-2 col-form-label">Lens Vision Type:</label>
+                                <div class="col-sm-10">
+                                    <input type="text" name="lVision" class="form-control" id="colFormLabel" placeholder="Enter Lens Vision Type">
+                                </div>
+                            </div>
+        
+                            <div class="form-group row">
+                                <label for="colFormLabel" class="col-sm-2 col-form-label">Lens Tint:</label>
+                                <div class="col-sm-10">
+                                    <input type="text" name="lTint" class="form-control" id="colFormLabel" placeholder="Enter Lens Tint">
+                                </div>
+                            </div>
+        
+                            <div class="form-group row">
+                                <label for="colFormLabel" class="col-sm-2 col-form-label">Lens Thinness Level: </label>
+                                <div class="col-sm-10">
+                                    <input type="text" name="lThinness" class="form-control" id="colFormLabel" placeholder="Enter Lens Thinness Level">
+                                </div>
+                            </div>        
+
+                </div>
+                <div class="modal-footer">
+                <button type="reset" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" name="insertvision"  class="btn btn-primary">Add Device</button>
+                </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+       <!-- Hearing Modal -->
+       <div class="modal fade" id="hearingmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Add Hearing Device</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <form action="insertHearing.php" method="POST">
+                        <div class="modal-body">
+                      
+                            
+                            <div class="form-group row">
+                                <label for="colFormLabel" class="col-sm-2 col-form-label">Catalog ID:</label>
+                                <div class="col-sm-10">
+                                    <input type="text" name="cID"  class="form-control" id="colFormLabel" placeholder="Enter Catalog ID">
+                                </div>
+                            </div>
+        
+                            <div class="form-group row">
+                                <label for="colFormLabel" class="col-sm-2 col-form-label">Catalog Name:</label>
+                                <div class="col-sm-10">
+                                    <input type="text" name="cName" class="form-control" id="colFormLabel" placeholder="Enter Catalog Name">
+                                </div>
+                            </div>
+        
+                            <div class="form-group row">
+                                <label for="colFormLabel" class="col-sm-2 col-form-label">Description: </label>
+                                <div class="col-sm-10">
+                                    <input type="text" name="cDescription" class="form-control" id="colFormLabel" placeholder="Enter Description">
+                                </div>
+                            </div>
+        
+                            <div class="form-group row">
+                                <label for="colFormLabel" class="col-sm-2 col-form-label">Availability Status: </label>
+                                <div class="col-sm-10">
+                                    <input type="text" name="aStatus" class="form-control" id="colFormLabel" placeholder="Enter Availability Status">
+                                </div>
+                            </div>
+        
+                            <div class="form-group row">
+                                <label for="colFormLabel" class="col-sm-2 col-form-label">Make: </label>
+                                <div class="col-sm-10">
+                                    <input type="text" name="make" class="form-control" id="colFormLabel" placeholder="Enter Make">
+                                </div>
+                            </div>
+        
+                            <div class="form-group row">
+                                <label for="colFormLabel" class="col-sm-2 col-form-label">Model: </label>
+                                <div class="col-sm-10">
+                                    <input type="text" name="model" class="form-control" id="colFormLabel" placeholder="Enter Model">
+                                </div>
+                            </div>
+                        
+        
+                        </div>
+                        <div class="modal-footer">
+                        <button type="reset" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" name="inserthearing" class="btn btn-primary">Add Device</button>
+                        </div>
+                    </form>
+              </div>
+            </div>
+          </div>
+
+    </body>
+</html>
